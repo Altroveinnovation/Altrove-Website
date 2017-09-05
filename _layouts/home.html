@@ -1,0 +1,524 @@
+<!doctype html>
+<html>
+
+<head>
+  {% include head.html %}
+</head>
+
+<body class="slides scroll fast smoothScroll animated">
+
+  {% include misc.html %} {% include nav.html %}
+
+
+  <!-- EXAMPLE: Typed -->
+  <!-- copy scripts -->
+  <!-- more settings: https://github.com/mattboldt/typed.js/#customization -->
+  <script src="https://cdn.rawgit.com/mattboldt/typed.js/548c6ade/dist/typed.min.js"></script>
+  <script>
+    $(function() {
+      $(".typed").typed({
+        strings: ["get to market faster.", "win in a data-driven economy.", "change the world."],
+        typeSpeed: 15,
+        backDelay: 2500,
+        loop: true,
+        shuffle: false
+      });
+    });
+  </script>
+
+  <!-- copy styles for blinking cursor -->
+  <style>
+    .typed-cursor {
+      opacity: 1;
+      -webkit-animation: blink 0.7s infinite;
+      animation: blink 0.7s infinite;
+    }
+
+    @-webkit-keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+
+
+
+  <!-- Slide 1: Video BG -->
+
+  <!-- EXAMPLE: Background Youtube -->
+  <!-- copy styles -->
+  <style>
+    .slide.video.youtube .background {
+      opacity: 0;
+      -webkit-transition: 1s opacity;
+      transition: 1s opacity;
+    }
+
+    .slide.video.youtube .background.playing,
+    .mobile .slide.video.youtube .background {
+      opacity: 1;
+    }
+  </style>
+
+  <!-- use the layout -->
+  <section class="slide fade video youtube">
+    <div class="content">
+      <div class="container">
+        <div class="wrap">
+          <h1 class="light fix-10-12 ae-5">From Idea to Market with <b>Altrove Innovation</b></h1>
+          <div class="ae-2">
+            <p class="fix-7-12 left">We partner with high-impact companies & startups to build disruptive products that <span class="typed bold text-blue"></span></p>
+          </div>
+          <div class="form-8">
+            <div class="ae-3">
+              <p class="light small">Get started with an introductory <b>innovation & strategy</b> meeting.</p>
+            </div>
+            <form action="#">
+              <input id="contact_name" type="name" class="ae-4 fromCenter" placeholder="Your Name" val="" />
+              <input id="contact_company" type="name" class="ae-4 fromCenter" placeholder="Your Company" val="" />
+              <input id="contact_email" type="email" class="ae-4 fromCenter" name="_replyto" placeholder="Your Email" val="" />
+              <input type="button" onclick="send_contact(this)" class="button blue ae-7 fromCenter" name="name" placeholder="Name" value="Contact Me" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="background" id="background"></div>
+  </section>
+
+  <!-- copy scripts -->
+  <script>
+    if (!window.isMobile && ($('.slide.youtube').length > 0)) {
+
+      var tv,
+        tag = document.createElement('script'),
+        firstScriptTag = document.getElementsByTagName('script')[0],
+        video = {
+          'videoId': '1M61sLxjypY',
+          'startSeconds': 0,
+          'endSeconds': 8780,
+          'suggestedQuality': 'hd1080'
+        };
+
+      tag.src = 'https://www.youtube.com/player_api';
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      function onYouTubePlayerAPIReady() {
+        $('#background').removeClass('background').wrap('<div class="background"></div>');
+        tv = new YT.Player('background', {
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          },
+          playerVars: {
+            autoplay: 0,
+            autohide: 1,
+            modestbranding: 0,
+            rel: 0,
+            showinfo: 0,
+            controls: 0,
+            disablekb: 1,
+            enablejsapi: 0,
+            iv_load_policy: 3
+          }
+        });
+      }
+
+      function onPlayerReady(el) {
+        tv.loadVideoById(video);
+        tv.mute();
+      }
+
+      function onPlayerStateChange(e) {
+        if (e.data === 1) {
+          $('.slide .background').addClass('playing');
+        } else if (e.data === 0) {
+          tv.seekTo(video.startSeconds)
+        }
+      }
+      $(window).on('load ready resize', function() {
+        vidRescale();
+      });
+
+      function vidRescale() {
+        var w = $(window).width() + 200,
+          h = $(window).height() + 300,
+          $elBackground = $('#background');
+        if (w / h > 16 / 9) {
+          tv.setSize(w, w / 16 * 9);
+          $elBackground.css({
+            'left': '0px'
+          });
+        } else {
+          tv.setSize(h / 9 * 16, h);
+          $elBackground.css({
+            'left': -($elBackground.outerWidth() - w) / 2
+          });
+        }
+      }
+    }
+  </script>
+
+
+
+
+
+
+
+
+  <!-- Slide 3 (#67) -->
+  <section class="slide whiteSlide autoHeight">
+    <div class="content">
+      <div class="container">
+        <div class="wrap">
+
+          <div class="fix-12-12 toCenter">
+            <h1 class="ae-1 ultraLight">World-class Designers & Engineers at Your Service</h1>
+            <div class="ae-2">
+              <p class="small light fix-9-12">Altrove acts as an extension of your tech team, on-demand. Leverage our expertise at any stage of your product cycle through design, development, architecture, prototyping & production.</p>
+            </div>
+
+
+            <a href="process.html" class="ae-1 button small rounded uppercase blue text-white margin-top-1 margin-bottom-3">
+
+
+                  <i class="material-icons" style="vertical-align: -30%">info_outline</i>
+                  Learn More
+                  </a>
+
+          </div>
+          <div class="fix-12-12">
+            <ul class="grid later fixedSpaces equal left margin-top-3 margin-bottom-0">
+              <li class="col-3-12 ae-3 fromCenter">
+                <a href="process.html" class="box-67">
+                  <div class="thumbnail-67">
+                    <img src="assets/img/design.jpg" class="wide" />
+                  </div>
+                  <div class="name-67 equalElement table wide">
+                    <div class="cell">
+                      <div class="category-67">User Experience</div>
+                      <div class="title-67">Design</div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="col-3-12 ae-4 fromCenter">
+                <a href="process.html" class="box-67">
+                  <div class="thumbnail-67">
+                    <img src="assets/img/code.jpg" class="wide" />
+                  </div>
+                  <div class="name-67 equalElement table wide">
+                    <div class="cell">
+                      <div class="category-67">System & Cloud</div>
+                      <div class="title-67">Architecture</div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="col-3-12 ae-4 fromCenter">
+                <a href="process.html" class="box-67">
+                  <div class="thumbnail-67">
+                    <img src="assets/img/prototype.jpg" class="wide" />
+                  </div>
+                  <div class="name-67 equalElement table wide">
+                    <div class="cell">
+                      <div class="category-67">Full-Stack</div>
+                      <div class="title-67">Engineering</div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="col-3-12 ae-5 fromCenter">
+                <a href="process.html" class="box-67">
+                  <div class="thumbnail-67">
+                    <img src="assets/img/production.jpg" class="wide" />
+                  </div>
+                  <div class="name-67 equalElement table wide">
+                    <div class="cell">
+                      <div class="category-67">All-Scale</div>
+                      <div class="title-67">Manufacturing</div>
+                    </div>
+
+
+                  </div>
+
+                </a>
+              </li>
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="background" style="background:#f4f4f4"></div>
+
+  </section>
+
+  <!-- Slide #88 -->
+  <section class="slide whiteSlide">
+    <div class="content">
+      <div class="container">
+        <div class="wrap">
+
+          <div class="fix-12-12">
+            <h1 class="ae-1 ultraLight">Introducing Altrove Collaboration Platform</h1>
+            <div class="ae-2 margin-bottom-3">
+              <p class="small light fix-9-12">We're with you every step of the way. See your project's latest builds, design files, and live source code & demo so you can watch your project evolve in real-time.</p>
+            </div>
+
+
+            <a href="platform.html" class="ae-1 button small rounded uppercase blue text-white margin-top-1 margin-bottom-6">
+
+
+                  <i class="material-icons" style="vertical-align: -30%">remove_red_eye</i>
+                  View Features
+                  </a>
+
+
+            <img src="assets/img/laptop.png" width="autoHeight">
+          </div>
+
+          <ul class="grid later fixedSpaces equal center grid-73 margin-top-6">
+            <li class="col-3-12 ae-5">
+              <a href="platform.html" class="cell-73 equalElement">
+                <img class="ae-3 fromCenter margin-bottom-1 margin-top-0" src="assets/img/f1.png" height="65" alt="App 1"/>
+                <h3 class="small">Effortless Transparency</h3>
+                <p class="micro">We clarify, automate & communicate progress so you never have to worry.</p>
+              </a>
+            </li>
+            <li class="col-3-12 ae-5">
+              <a href="platform.html" class="cell-73 equalElement">
+                <img class="ae-3 fromCenter margin-bottom-1 margin-top-0" src="assets/img/f2.png" height="65" alt="App 1"/>
+                <h3 class="small">Live Demo: Full transparency</h3>
+                <p class="micro">See the progress from your dashboard.</p>
+              </a>
+            </li>
+            <li class="col-3-12 ae-6">
+              <a href="platform.html" class="cell-73 equalElement">
+                <img class="ae-3 fromCenter margin-bottom-1 margin-top-0" src="assets/img/f3.png" height="65" alt="App 1"/>
+                <h3 class="small">Rock Your Launch</h3>
+                <p class="micro">Development talent combined with a cutting-edge progress toolbox.</p>
+              </a>
+            </li>
+            <li class="col-3-12 ae-7">
+              <a href="platform.html" class="cell-73 equalElement last">
+                <img class="ae-3 fromCenter margin-bottom-1 margin-top-0" src="assets/img/f4.png" height="65" alt="App 1"/>
+                <h3 class="small">You Own Your IP</h3>
+                <p class="micro">We build together your company IP to strengthen your unique selling proposition.</p>
+              </a>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+
+  <!-- Slide #68 -->
+  <section class="slide whiteSlide autoHeight">
+    <div class="content">
+      <div class="container">
+        <div class="wrap">
+
+          <div class="fix-12-12">
+            <h1 class="ae-1 ultraLight margin-top-0">Our Clients & Partners</h1>
+            <div class="ae-2 margin-bottom-3">
+              <p class="small light fix-9-12">We’re working & partnering with industry leaders & innovators to take an industry-driven approach toward high-quality, full stack product development.</p>
+            </div>
+
+          </div>
+          <div class="fix-12-12">
+            <!-- remove class tintLogos to disable color change of logo images -->
+            <ul class="grid grid-68 tintLogos equal later">
+              <li class="col-2-12">
+                <div class="table wide equalElement ae-3">
+                  <div class="cell">
+                    <img width="89" src="assets/img/bbc.png" alt="BBC" />
+                  </div>
+                </div>
+              </li>
+              <li class="col-2-12">
+                <div class="table wide equalElement ae-4">
+                  <div class="cell">
+                    <img width="115" src="assets/img/google.png" alt="Google" />
+                  </div>
+                </div>
+              </li>
+              <li class="col-2-12">
+                <div class="table wide equalElement ae-5">
+                  <div class="cell">
+                    <img width="42" src="assets/img/apple.png" alt="Apple" />
+                  </div>
+                </div>
+              </li>
+              <li class="col-2-12">
+                <div class="table wide equalElement ae-6">
+                  <div class="cell">
+                    <img width="124" src="assets/img/canon.png" alt="Canon" />
+                  </div>
+                </div>
+              </li>
+              <li class="col-2-12">
+                <div class="table wide equalElement ae-7">
+                  <div class="cell">
+                    <img width="83" src="assets/img/nike.png" alt="Nike" />
+                  </div>
+                </div>
+              </li>
+              <li class="col-2-12">
+                <div class="table wide equalElement ae-8">
+                  <div class="cell">
+                    <img width="153" src="assets/img/greenpeace.png" alt="Green Peace" />
+                  </div>
+                </div>
+              </li>
+              <li class="col-2-12">
+                <div class="table wide equalElement ae-3">
+                  <div class="cell">
+                    <img width="89" src="assets/img/bbc2.png" alt="BBC" />
+                  </div>
+                </div>
+              </li>
+              <li class="col-2-12">
+                <div class="table wide equalElement ae-4">
+                  <div class="cell">
+                    <img width="115" src="assets/img/google2.png" alt="Google" />
+                  </div>
+                </div>
+              </li>
+              <li class="col-2-12">
+                <div class="table wide equalElement ae-5">
+                  <div class="cell">
+                    <img width="42" src="assets/img/apple2.png" alt="Apple" />
+                  </div>
+                </div>
+              </li>
+              <li class="col-2-12">
+                <div class="table wide equalElement ae-6">
+                  <div class="cell">
+                    <img width="124" src="assets/img/canon2.png" alt="Canon" />
+                  </div>
+                </div>
+              </li>
+              <li class="col-2-12">
+                <div class="table wide equalElement ae-7">
+                  <div class="cell">
+                    <img width="83" src="assets/img/nike2.png" alt="Nike" />
+                  </div>
+                </div>
+              </li>
+              <li class="col-2-12">
+                <div class="table wide equalElement ae-8">
+                  <div class="cell">
+                    <img width="153" src="assets/img/greenpeace2.png" alt="Green Peace" />
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+
+
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="background" style="background:#f4f4f4"></div>
+
+  </section>
+
+
+
+
+  <!-- Slide 7 (#44) -->
+  <section class="slide fade-7 parallax">
+    <div class="content">
+      <div class="container">
+        <div class="wrap bottom">
+
+          <div class="fix-7-12 left toLeft">
+            <h1 class="ae-1">Capital Designed for Hardware</h1>
+            <div class="ae-2">
+              <p><b>Altrove Capital</b> creates financial opportunities designed to address the unique needs of early-stage startups at the intersection of hardware and software.</p>
+            </div>
+
+            <a href="capital.html" class="ae-1 button small rounded uppercase blue text-white margin-top-1 margin-bottom-6">
+
+
+                  <i class="material-icons" style="vertical-align: -30%">forward</i>
+                  See How
+                  </a>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="background" style="background-image:url(assets/img/altrove_capital.jpg)"></div>
+  </section>
+
+
+
+
+  <!-- EXAMPLE: Split -->
+  <!-- 1) copy styles -->
+  <style>
+    @media screen and (max-width: 738px) {
+      .slide.half-and-half .container,
+      .slide.half-and-half .wrap {
+        display: block;
+        width: 100% !important;
+      }
+    }
+  </style>
+
+
+  <!-- split content -->
+  <section class="slide autoHeight whiteSlide half-and-half" style="background: #F4F4F4">
+    <div class="content">
+      <div class="container">
+        <div class="wrap" style="background: #fff">
+          <img class="ae-3 fromCenter margin-bottom-2 margin-top-0" src="assets/img/co.png" height="100" alt="App 1" />
+          <h1 class="ae-1 ultraLight">Companies</h1>
+          <p class="ae-1 small light">We believe building a successful product is a collaborative effort. Our team is ready to get going as soon as you are.</p>
+          <a href="#" class="ae-1 button small rounded uppercase blue text-white margin-top-0 margin-bottom-0 popupTrigger" data-popup-id="contact">
+            <i class="ae-1 material-icons" style="vertical-align: -30%">chrome_reader_mode</i>
+              Get a Quote
+          </a>
+        </div>
+        <div class="wrap center" style="background: #F4F4F4">
+          <img class="ae-3 fromCenter margin-bottom-2 margin-top-0" src="assets/img/st.png" height="100" alt="App 1" />
+          <h1 class="ae-1 ultraLight">Startups</h1>
+          <p class="small light">Our mission is to enable a new generation of technology leaders to advance the world. If you've got what it takes, we're all ears!</p>
+          <a href="#" class="ae-1 button small rounded uppercase red text-white margin-top-0 margin-bottom-0 popupTrigger" data-popup-id="contact">
+            <i class="ae-1 material-icons" style="vertical-align: -30%">monetization_on</i>
+              Pitch Us!
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include footer.html %}
+
+
+  <!-- Preloader -->
+  {% include preloader.html %}
+
+</body>
+
+</html>

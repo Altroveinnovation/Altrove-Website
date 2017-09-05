@@ -1,0 +1,731 @@
+<!doctype html>
+<html>
+
+<head>
+  {% include head.html %}
+</head>
+
+<body class="slides scroll fast smoothScroll animated">
+
+  {% include misc.html %} {% include nav.html %}
+
+
+  <!-- EXAMPLE: Powerful Components -->
+  <style>
+    .components h3 {
+      font-size: 19px;
+      line-height: 24px;
+      margin-bottom: 10px;
+    }
+
+    .components p.small {
+
+      font-size: 17px;
+      line-height: 22px;
+      letter-spacing: 0.1px;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+
+    .components-grid .fix {
+      padding-left: 40px;
+    }
+
+    .components-grid .material-icons {
+      position: absolute;
+      top: 2px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      .components .container {
+        min-height: 1200px;
+      }
+    }
+    /* image parallax effect */
+
+    @media screen and (min-width: 1024px) {
+      .components-pics {
+        max-width: none;
+        position: absolute;
+        top: -340px;
+        -webkit-transform: translateZ(0);
+        -webkit-transition: 10s cubic-bezier(.23, 1.5, .36, .86);
+        transition: 10s cubic-bezier(.23, 1.5, .36, .86);
+        -webkit-transition-property: -webkit-transform, opacity;
+        transition-property: transform, opacity;
+      }
+      .components-pics.layer-2 {
+        top: -505px;
+        left: 70px;
+      }
+      .hidden {
+        display: none;
+      }
+      .components-pics.layer-3 {
+        top: -400px;
+        left: 163px;
+      }
+
+
+      /* before */
+      .slide.components.before .components-pics.layer-2 {
+        -webkit-transform: translateY(95px);
+        transform: translateY(95px);
+      }
+      .slide.components.before .components-pics.layer-3 {
+        -webkit-transform: translateY(50px);
+        transform: translateY(50px);
+      }
+
+      /* selected */
+      .slide.components.selected .components-pics.layer-2,
+      .slide.components.selected .components-pics.layer-3 {
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px);
+        opacity: 1;
+      }
+
+      /* after */
+      .slide.components.after .components-pics.layer-2 {
+        -webkit-transform: translateY(-95px);
+        transform: translateY(-95px);
+      }
+      .slide.components.after .components-pics.layer-3 {
+        -webkit-transform: translateY(-50px);
+        transform: translateY(-50px);
+      }
+    }
+  </style>
+
+  <!-- Slide #11 -->
+  <section class="slide fade-8 kenBurns zoomout">
+    <div class="content">
+      <div class="container">
+        <div class="wrap">
+          <h1 class="light fix-12-12 ae-5">Venture Capital Designed for Hardware</b></h1>
+          <div class="ae-2">
+            <p class="fix-8-12 center"><b>Altrove Capital</b> is a venture firm designed to address the unique needs of early-stage startups at the intersection of hardware and software.</p>
+          </div>
+          <div class="form-8">
+            <div class="ae-3">
+              <p class="light small">Are you a <b>disruptive startup</b> & got what it takes?</p>
+            </div>
+            <a href="#"  class="ae-1 button small rounded uppercase red text-white margin-top-0 margin-bottom-0">
+              <i class="material-icons" style="vertical-align: -30%">monetization_on</i>
+              Pitch Us!
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="background" style="background-image:url(assets/img/altrove_capital.jpg)"></div>
+  </section>
+
+
+  <!-- EXAMPLE: Tabs -->
+  <style>
+    .pill.controller {
+      font-size: 0;
+      border: 1px solid;
+      display: inline-block;
+      border-radius: 6px;
+    }
+
+    .pill.controller li {
+      padding: 10px 20px;
+      display: inline-block;
+      border: 1px solid #fff;
+      font-size: initial;
+    }
+
+    .pill.controller li:first-child {
+      border-radius: 4px 0 0 4px;
+    }
+
+    .pill.controller li:last-child {
+      border-radius: 0 4px 4px 0;
+    }
+
+    .pill.controller li.selected {
+      background: #fff;
+      color: #303030;
+    }
+  </style>
+
+
+
+  <!-- Slide #35 -->
+  <section class="slide whiteSlide kenBurns">
+    <div class="content">
+      <div class="container">
+        <div class="wrap">
+          <div class="fix-12-12 toCenter">
+            <img class="margin-bottom-1 ae-1 fromCenter" src="assets/img/why.png" width="70" />
+            <div class="ae-2">
+              <h1 class="ultraLight">Why Altrove Capital?</h1>
+            </div>
+            <div class="ae-4 fix-7-12 margin-bottom-6">
+              <p class="small light">
+                Utilizing the power of Altrove's deep network, we match disruptive startups with motivated investors & corporate partners.
+              </p>
+            </div>
+
+            <ul class="flex grid-49 later equal left">
+              <ul class="grid fixedSpaces equal left grid-64">
+                <li class="col-4-12 ae-3">
+                  <a href="#"  class="cell-64 equalElement">
+          <img class="margin-bottom-1 ae-1 fromCenter" src="assets/img/t.png" width="50"/>
+                <h3>Technology Acceleration</h3>
+                <p class="micro">Deep connections with high-impact laboratories and programs at top-tier academic institutions, and close ties with leading inventors and technologists in a wide range of industries around the globe.</p>
+              </a>
+                </li>
+                <li class="col-4-12 ae-4">
+                  <a href="#"  class="cell-64 equalElement">          <img class="margin-bottom-1 ae-1 fromCenter" src="assets/img/v.png" width="50"/>
+                <h3>Venture Capital</h3>
+<p class="micro">We support groundbreaking technologies in making an impact on the world. Our network of investors is ever-expanding and every single one is aligned with our mission, focused on technologies and problems they care about.</p>              </a>
+                </li>
+                <li class="col-4-12 ae-6">
+                  <a href="#"  class="cell-64 equalElement last">          <img class="margin-bottom-1 ae-1 fromCenter" src="assets/img/s.png" width="50"/>
+                <h3>Strategic Partnerships</h3>
+<p class="micro">Our partners are driving structural changes in the field of corporate venture. 90 days time-to-market for most innovation projects & initiatives in Europe, Americas, Asia, Africa & Middle East.</p>              </a>
+                </li>
+              </ul>
+            </ul>
+          </div>
+          <div class="ae-4 fix-12-12 margin-bottom-0 margin-top-6">
+            <p class="micro light left">
+              Altrove Capital is designed to address the unique needs of early-stage startups at the intersection of hardware and software. Most institutional investors have moved upstream and back hardware companies that have completed product development. Altrove Capital fills the gap in early stage hardware financing, investing in pre-seed, pre-product companies. We believe capital is a commodity and people are not. We believe people are at the center of great products and great products are at the center of exceptional companies. We love lean, technical teams and thrive on helping founders bridge the gap between idea and product/market fit. An investment from Altrove Capital brings a full stack team devoted to helping you get to market faster, raise smart follow-on capital, and build a foundation for success.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Slide #51 -->
+  <section class="slide autoHeight">
+    <div class="content">
+      <div class="container">
+        <div class="wrap left">
+
+
+          <div class="fix-12-12">
+            <ul class="grid later equal">
+              <li class="col-4-12 margin-top-3">
+                <div class="fix-4-12 crop">
+                  <div class="pad shadow ae-3">
+                    <img src="assets/img/stage.png" class="ae-4 margin-bottom-2" alt="App 1" height="65" />
+                    <h3 class="big ae-5">Stage</h3>
+                    <div class="ae-6">
+                      <p class="small equalElement">
+                        Pre-seed. Nearly always the first institutional investor. Initial checks up to $250k.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="col-4-12 margin-top-3">
+                <div class="fix-4-12 crop">
+                  <div class="pad shadow ae-3">
+                    <img src="assets/img/sector.png" class="ae-4 margin-bottom-2" alt="App 1" height="65" />
+                    <h3 class="big ae-5">Sector</h3>
+                    <div class="ae-6">
+                      <p class="small equalElement">
+                        Intersection of hardware and software. Focused on companies with high customer lifetime value, usually with recurring revenue.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="col-4-12 margin-top-3">
+                <div class="fix-4-12 crop">
+                  <div class="pad shadow ae-4">
+                    <img src="assets/img/platform.png" class="ae-5 margin-bottom-2" alt="App 2" height="65" />
+                    <h3 class="big ae-6">Platform</h3>
+                    <div class="ae-7">
+                      <p class="small equalElement">
+                        Expertise and infrastructure. Partners who have built multi-billion dollar companies. A full-time engineering team that has shipped millions of units.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+
+
+
+        </div>
+
+
+      </div>
+    </div>
+    <div class="background gradient-1"></div>
+  </section>
+
+
+
+  <!-- EXAMPLE: Showcases -->
+  <!-- 1) copy styles -->
+  <style>
+    .showcase .showcase-container li {
+      transform: translateZ(0);
+      -webkit-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+    }
+
+    .fix-custom {
+      padding-left: calc(8% + 15px);
+      padding-right: calc(8% + 15px);
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1698px) {
+      .fix-custom {
+        padding-left: 0%;
+        padding-right: 0%;
+        max-width: 1800px;
+        left: -50px;
+        width: calc(100% + 100px) !important;
+        position: relative;
+      }
+      .showcase .showcase-container li:nth-child(3n+1) {
+        text-align: right;
+      }
+    }
+
+    .showcase li .sc {
+      margin-bottom: 50px;
+      color: #858585;
+      font-size: 17px;
+      line-height: 25px;
+      position: relative;
+    }
+
+    .showcase li .sc-img {
+      font-size: 0;
+      line-height: 0;
+      background: #E8E8E8;
+      padding-top: 20px;
+      border-radius: 5px;
+      display: inline-block;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+      -webkit-transition: 1s cubic-bezier(0.35, 1.69, 0.35, 0.81);
+      transition: 1s cubic-bezier(0.35, 1.69, 0.35, 0.81);
+    }
+
+    .showcase.slide li .sc:hover .sc-img {
+      box-shadow: 0 22px 34px rgba(0, 0, 0, 0.4);
+      box-shadow: 13px 22px 34px rgba(0, 0, 0, 0.4);
+      -webkit-transform: translateY(-10px) scale(1.025);
+      transform: translateY(-10px) scale(1.025);
+    }
+    /* shiny effect on hover */
+
+    .showcase.slide li .sc-img:after {
+      content: ":";
+      position: absolute;
+      top: 20px;
+      left: 0;
+      bottom: -1px;
+      right: 0;
+      width: 100%;
+
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100;White+to+Transparent */
+      background: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=1);
+      /* IE6-9 fallback on horizontal gradient */
+      opacity: 0;
+      -webkit-transition: 1s cubic-bezier(0.35, 1.69, 0.35, 0.81);
+      transition: 1s cubic-bezier(0.35, 1.69, 0.35, 0.81);
+      border-radius: 0 0 3px 3px;
+    }
+
+    .showcase.slide li .sc:hover .sc-img:after {
+      opacity: 0.5;
+    }
+
+    .showcase.popup li .sc-img {
+      background: #35363a;
+      padding-top: 30px;
+    }
+
+    .showcase li .sc-img img {
+      margin-bottom: -1px;
+      border-radius: 0 0 3px 3px;
+    }
+
+    .showcase.popup li .sc-img a:hover {
+      opacity: 1;
+    }
+
+    .showcase.popup li .sc-img a:before {
+      content: 'remove_red_eye';
+      background: rgba(0, 0, 0, 0.2);
+      top: 30px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      -webkit-transition: 0.25s;
+      transition: 0.35s;
+    }
+
+    .showcase.popup li .sc-img:hover a:before {
+      opacity: 0;
+    }
+
+    .showcase li .sc-img:before {
+      content: "...";
+      position: absolute;
+      font-size: 45px;
+      color: #fff;
+      top: -4px;
+      line-height: 0;
+      letter-spacing: -2px;
+      left: 4px;
+    }
+    /* popup */
+
+    .showcase.popup li .sc-img:before {
+      font-size: 50px;
+      top: 0px;
+      left: 9px;
+    }
+
+    .showcase li .sc strong {
+      display: block;
+      color: #202020;
+      margin-top: 10px;
+    }
+
+    .slide.showcase li .sc:after {
+      content: attr(data-hover-text);
+      position: absolute;
+      top: calc(50% - 50px);
+      left: 50%;
+      right: inherit;
+      background: #fff;
+      border-radius: 50px;
+      padding: 8px 21px;
+      opacity: 0;
+      -webkit-transform: translateY(-10px) scale(1.025) translateX(-50%);
+      transform: translateY(-10px) scale(1.025) translateX(-50%);
+      -webkit-transition: 1s cubic-bezier(0.35, 1.69, 0.35, 0.81);
+      transition: 1s cubic-bezier(0.35, 1.69, 0.35, 0.81);
+    }
+
+    .slide.showcase li .sc:hover:after {
+      opacity: 1;
+      -webkit-transform: translateY(0px) translateX(-50%);
+      transform: translateY(0px) translateX(-50%);
+    }
+
+    .showcase-container {
+      align-items: center;
+      justify-content: center;
+    }
+
+    .showcase-container.controller li.selected {
+      cursor: pointer;
+      pointer-events: all;
+    }
+
+    .popup[data-popup-id="showcase"] .slider>li.selected {
+      -webkit-animation: 0.5s fadeIn;
+      animation: 0.5s fadeIn;
+    }
+
+    .fix-custom-popup {
+      max-width: 1480px !important;
+    }
+  </style>
+
+  <!-- copy the custom code -->
+  <section class="slide whiteSlide showcase">
+    <div class="content">
+      <div class="container">
+        <div class="wrap padding-left-0 padding-right-0">
+          <img class="margin-bottom-1 ae-1 fromCenter" src="assets/img/portfolio.png" width="70" />
+          <div class="ae-2">
+            <h1 class="ultraLight">Our Growing Portfolio</h1>
+            <div class="fix-custom">
+              <ul class="flex showcase-container popupTrigger controller fromBottom" data-popup-id="showcase" data-slider-id="showcase">
+                <li class="col-3-12 col-tablet-1-2 col-phablet-1-1 ae-1 ">
+                  <a href="http://www.aimbest.ch" target="_blank">
+                    <div class="sc center " data-hover-text="View Company "><div class="sc-img "><img src="http://i.imgur.com/GRYclfQ.jpg "/></div>
+                    <strong>AIM</strong>www.aimbest.ch</div>
+                  </a>
+                </li>
+                <li class="col-3-12 col-tablet-1-2 col-phablet-1-1 ae-1 ">
+                  <a href="http://www.gomixfit.com" target="_blank">
+                    <div class="sc center " data-hover-text="View Company "><div class="sc-img "><img src="http://i.imgur.com/Ze3rvpx.png "/></div>
+                    <strong>Mixfit</strong>www.gomixfit.com</div>
+                  </a>
+                </li>
+                <li class="col-3-12 col-tablet-1-2 col-phablet-1-1 ae-1 ">
+                  <div class="sc center " data-hover-text="Coming Soon"><div class="sc-img "><img src="assets/img/under_construction.jpg "/></div>
+                  <strong>AIM Feedback</strong>aimfeedback.com</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Showcase popup gallery -->
+<div class="popup animated showcase " data-popup-id="showcase ">
+  <div class="close "><svg><use xmlns:xlink="http://www.w3.org/1999/xlink " xlink:href="#close "></use></svg></div>
+  <div class="content ">
+    <div class="container ">
+      <div class="wrap left top padding-top-4 padding-bottom-4 padding-left-3 padding-right-3 ">
+        <div class="fix-custom-popup popupContent ">
+          <div class="fix-12-12 ">
+            <div class="button noSelect round small white opaque cropLeft " data-slider-id="showcase " data-slider-action="prev "><i class="material-icons ">arrow_back</i>Back</div>
+            <div class="button noSelect round small white opaque margin-left-1 " data-slider-id="showcase " data-slider-action="next ">Next<i class="material-icons right ">arrow_forward</i></div>
+          </div>
+          <ul class="slider margin-top-4 " data-slider-id="showcase ">
+
+            <!-- inner element -->
+            <li>
+              <div class="fix-12-12 ">
+                <div class="fix-8-12 toLeft ">
+                  <a href="<?=$url?>"  rel="nofollow"><span class="h1 big ae-1">AIM</span></a>
+                <div class="h4 light ae-2">SaaS</div>
+                <div class="ae-3 margin-top-2">
+                  <p class="small">An Altrove Company</p>
+                </div>
+                <a class="button white round stroke small ae-4" href="https://www.aimbest.tech/"  rel="nofollow">Visit the Website</a>
+            </div>
+          </div>
+          <div class="sc margin-top-3 ae-5">
+            <div class="sc-img">
+              <a href="<?=$url?>"  rel="nofollow">
+                    <img class="block" src="http://i.imgur.com/GRYclfQ.jpg">
+                  </a>
+            </div>
+          </div>
+          </li>
+
+          <!-- inner element -->
+          <li>
+            <div class="fix-12-12">
+              <div class="fix-8-12 toLeft">
+                <a href="<?=$url?>"  rel="nofollow"><span class="h1 big ae-1">Mixfit</span></a>
+                <div class="h4 light ae-2">Health & Wellness</div>
+                <a class="button white round stroke small ae-4 margin-top-3" href="https://google.com/"  rel="nofollow">Visit the Website</a>
+              </div>
+            </div>
+            <div class="sc margin-top-3 ae-5">
+              <div class="sc-img">
+                <a href="<?=$url?>"  rel="nofollow">
+                    <img class="block" src="http://i.imgur.com/Ze3rvpx.png">
+                  </a>
+              </div>
+            </div>
+          </li>
+
+
+          <!-- inner element -->
+          <li>
+            <div class="fix-12-12">
+              <div class="fix-8-12 toLeft">
+                <a href="<?=$url?>"  rel="nofollow"><span class="h1 big ae-1">Blockform</span></a>
+                <div class="h4 light ae-2">Blockchain Platform</div>
+                <div class="ae-3 margin-top-2">
+                  <p class="small">An Altrove Company</p>
+                </div>
+                <a class="button white round stroke small ae-4" href="https://www.comingsoon.com/"  rel="nofollow">Visit the Website</a>
+              </div>
+            </div>
+            <div class="sc margin-top-3 ae-5">
+              <div class="sc-img">
+                <a href="<?=$url?>"  rel="nofollow">
+                    <img class="block" src="assets/img/blockform.jpg">
+                  </a>
+              </div>
+            </div>
+          </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+
+    <!-- Slide 3 (#67) -->
+    <section class="slide whiteSlide autoHeight">
+      <div class="content">
+        <div class="container">
+          <div class="wrap">
+            <div class="fix-12-12">
+              <h1 class="ae-1 ultraLight margin-top-0">Areas of Interest</h1>
+            </div>
+
+            <div class="fix-12-12">
+              <ul class="grid later fixedSpaces equal left margin-top-5">
+                <li class="col-4-12 ae-3 fromCenter">
+                  <a href="#" class="box-67">
+                    <div class="thumbnail-67">
+                      <img src="assets/img/1.jpg" class="wide" />
+                    </div>
+                    <div class="name-67 equalElement table wide">
+                      <div class="cell">
+                        <div class="title-67">Foodtech</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="col-4-12 ae-3 fromCenter">
+                  <a href="#" class="box-67">
+                    <div class="thumbnail-67">
+                      <img src="assets/img/2.jpg" class="wide" />
+                    </div>
+                    <div class="name-67 equalElement table wide">
+                      <div class="cell">
+                        <div class="title-67">Healthcare</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="col-4-12 ae-3 fromCenter">
+                  <a href="#" class="box-67">
+                    <div class="thumbnail-67">
+                      <img src="assets/img/5.jpg" class="wide" />
+                    </div>
+                    <div class="name-67 equalElement table wide">
+                      <div class="cell">
+                        <div class="title-67">Health & Wellness</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="col-4-12 ae-3 fromCenter">
+                  <a href="#" class="box-67">
+                    <div class="thumbnail-67">
+                      <img src="assets/img/8.jpg" class="wide" />
+                    </div>
+                    <div class="name-67 equalElement table wide">
+                      <div class="cell">
+                        <div class="title-67">Clean Energy</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="col-4-12 ae-3 fromCenter">
+                  <a href="#" class="box-67">
+                    <div class="thumbnail-67">
+                      <img src="assets/img/bioPlastics_xaltrove.jpg" class="wide" />
+                    </div>
+                    <div class="name-67 equalElement table wide">
+                      <div class="cell">
+                        <div class="title-67">Sustainable Materials</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="col-4-12 ae-3 fromCenter">
+                  <a href="#" class="box-67">
+                    <div class="thumbnail-67">
+                      <img src="assets/img/7.jpg" class="wide" />
+                    </div>
+                    <div class="name-67 equalElement table wide">
+                      <div class="cell">
+                        <div class="title-67">Automotive</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 (#67) -->
+      <section class="slide whiteSlide autoHeight">
+        <div class="content">
+          <div class="container">
+            <div class="wrap">
+              <div class="fix-12-12">
+                <h1 class="ae-1 ultraLight margin-top-0">Technologies of Interest</h1>
+              </div>
+
+              <div class="fix-12-12">
+                <ul class="grid later fixedSpaces equal left margin-top-5">
+                  <li class="col-4-12 ae-3 fromCenter">
+                    <a href="#" class="box-67">
+                      <div class="thumbnail-67">
+                        <img src="assets/img/3.jpg" class="wide" />
+                      </div>
+                      <div class="name-67 equalElement table wide">
+                        <div class="cell">
+                          <div class="title-67">Blockchain</div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="col-4-12 ae-3 fromCenter">
+                    <a href="#" class="box-67">
+                      <div class="thumbnail-67">
+                        <img src="assets/img/6.jpg" class="wide" />
+                      </div>
+                      <div class="name-67 equalElement table wide">
+                        <div class="cell">
+                          <div class="title-67">Artificial Intelligence</div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="col-4-12 ae-3 fromCenter">
+                    <a href="#" class="box-67">
+                      <div class="thumbnail-67">
+                        <img src="assets/img/green-chemistry_xaltrove.jpg" class="wide" />
+                      </div>
+                      <div class="name-67 equalElement table wide">
+                        <div class="cell">
+                          <div class="title-67">Green Chemistry</div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="col-4-12 ae-3 fromCenter">
+                    <a href="#" class="box-67">
+                      <div class="thumbnail-67">
+                        <img src="assets/img/9.jpg" class="wide" />
+                      </div>
+                      <div class="name-67 equalElement table wide">
+                        <div class="cell">
+                          <div class="title-67">Robotics</div>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </section>
+
+
+    {% include footer.html %}
+
+
+    <!-- Preloader -->
+    {% include preloader.html %}
+
+</body>
+
+</html>
