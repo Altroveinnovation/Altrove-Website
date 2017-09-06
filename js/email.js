@@ -12,7 +12,7 @@ function wait(el) {
 
 function post_email(data, el) {
   $.ajax({
-    url: "https://formspree.io/quentin.bereau@gatemedia.ch",
+    url: "https://formspree.io/services@altroveinnovation.com",
     method: "POST",
     data: data,
     dataType: "json",
