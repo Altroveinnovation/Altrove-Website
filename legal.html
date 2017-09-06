@@ -471,64 +471,6 @@
   <div class="background" style="background-image:url(assets/img/appbg.jpg)"></div>
 </section>
 
-
-<!-- EXAMPLE: Mailchimp -->
-<!-- How to find your Mailchimp URL: http://cl.ly/fWJw -->
-<!-- Thanks to Sid Doshi for an awesome jquery plugin: https://github.com/scdoshi/jquery-ajaxchimp -->
-
-<!-- (1) Copy scripts -->
-<script src="http://cdn.rawgit.com/scdoshi/jquery-ajaxchimp/master/jquery.ajaxchimp.min.js"></script>
-<script>
-  $(function() {
-    $('#subscribe').ajaxChimp({
-      url: '//designmodo.us4.list-manage.com/subscribe/post?u=d7b5474e1bff23f08409d4ba9&amp;id=a2ae53acc1',
-      callback: function(resp) {
-        if (resp.result === 'success') {
-          $('#subscribe-label').text("Thank you for your subscription");
-        }
-      }
-    });
-  });
-</script>
-
-<!-- (2) Copy styles -->
-<style>
-  .subscribe-message {
-    display: block;
-    font-family: "Source Sans Pro", sans-serif;
-    font-size: 20px;
-    max-width: 462px;
-    margin: 0 auto;
-    border-radius: 4px;
-
-    /* animation */
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    opacity: 0;
-    max-height: 0;
-    padding: 0;
-    border-width: 0;
-
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-  }
-
-  .subscribe-message a {
-    font-weight: 600;
-  }
-
-  .subscribe-message.valid,
-  .subscribe-message.error {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    max-height: 132px;
-    opacity: 1;
-    padding: 14px 20px;
-    border: 2px solid;
-    margin-top: 20px;
-  }
-</style>
-
 <section class="slide autoHeight white">
   <div class="content">
     <div class="container">
